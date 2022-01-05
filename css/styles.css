@@ -1,0 +1,26 @@
+.brown-background {
+  background-color: #3c2b00;
+}
+
+.white-text {
+  color: white;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.link-background {
+  width: 100%;
+  transform: scale(1.5);
+}
+
+.position-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+body {
+  background-image: url("../images/link.jpg");
+  background-size: cover;
+}
