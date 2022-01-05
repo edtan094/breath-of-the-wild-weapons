@@ -17,10 +17,19 @@
 
 .position-fixed {
   position: fixed;
+  top: 0;
   width: 100%;
 }
 
 body {
   background-image: url("../images/link.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul,
+li {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
 }
