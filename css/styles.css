@@ -27,8 +27,7 @@ body {
   background-repeat: no-repeat;
 }
 
-ul,
-li {
+.no-list-styles {
   margin-left: 0;
   padding-left: 0;
   list-style: none;
