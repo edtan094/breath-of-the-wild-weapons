@@ -90,3 +90,11 @@ li {
 .column-half {
   padding: 0 0.75rem;
 }
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}

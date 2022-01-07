@@ -1,5 +1,5 @@
 .container {
-  max-width: 575px;
+  max-width: 375px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -31,6 +31,10 @@ div.weapon-list {
   margin-bottom: 18px;
 }
 
+form {
+  margin-bottom: 14px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 850px;
@@ -47,5 +51,9 @@ div.weapon-list {
   div.weapon-list {
     margin-top: 100px;
     justify-content: space-between;
+  }
+
+  form {
+    margin-bottom: 35px;
   }
 }
