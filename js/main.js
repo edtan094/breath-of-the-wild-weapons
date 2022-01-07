@@ -44,7 +44,7 @@ function generateDOM(data) {
     }
   }
   $paragraphName.textContent = properName;
-  $paragraphName.setAttribute('class', 'margin-top-five font-size-name');
+  $paragraphName.setAttribute('class', 'margin-top-five font-size-name weapon-name');
   $columnHalfDiv.appendChild($paragraphName);
 
   var $paragraphLocation = document.createElement('p');
@@ -70,3 +70,21 @@ function generateDOM(data) {
   return $greenDiv;
 
 }
+
+var $form = document.querySelector('form');
+var $input = document.querySelector('input');
+function searchBar(event) {
+  event.preventDefault();
+  var $allWeapons = document.querySelectorAll('.weapon-name');
+  var inputValue = $input.value.toLowerCase();
+  for (var nameIndex = 0; nameIndex < $allWeapons.length; nameIndex++) {
+    var weaponName = $allWeapons[nameIndex].textContent.toLowerCase();
+    var $weaponToBeHidden = $allWeapons[nameIndex].closest('.green-card');
+    $weaponToBeHidden.classList.add('display-hidden');
+    if (weaponName.includes(inputValue)) {
+      $weaponToBeHidden.classList.remove('display-hidden');
+    }
+  }
+}
+
+$form.addEventListener('submit', searchBar);

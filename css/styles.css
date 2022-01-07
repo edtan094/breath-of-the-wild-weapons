@@ -1,3 +1,7 @@
+.display-hidden {
+  display: none !important;
+}
+
 p {
   font-family: Rye, cursive, Arial, Helvetica, sans-serif;
 }
