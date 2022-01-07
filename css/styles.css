@@ -1,3 +1,7 @@
+.display-hidden {
+  display: none !important;
+}
+
 p {
   font-family: Rye, cursive, Arial, Helvetica, sans-serif;
 }
@@ -89,4 +93,12 @@ li {
 .column-full,
 .column-half {
   padding: 0 0.75rem;
+}
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
 }
