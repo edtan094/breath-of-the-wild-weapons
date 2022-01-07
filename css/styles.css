@@ -1,0 +1,92 @@
+p {
+  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
+}
+
+.brown-background {
+  background-color: #3c2b00;
+}
+
+.white-text {
+  color: white;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.link-background {
+  width: 100%;
+  transform: scale(1.5);
+}
+
+.position-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+body {
+  background-image: url("../images/link-overlay.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.no-list-styles {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.green-card {
+  height: 126px;
+  width: 326px;
+  background-color: #d9f9d3;
+  border-radius: 10px;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.image {
+  height: 113px;
+  width: 113px;
+  margin-top: 6px;
+  border-radius: 10px;
+}
+
+ul {
+  padding-left: 10px;
+}
+
+li {
+  padding-left: 0;
+  margin-left: 0;
+  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+
+.margin-top-five {
+  margin-top: 5px;
+}
+
+.font-size-name {
+  font-size: 17px;
+}
+
+.font-size-common {
+  font-size: 15px;
+}
+
+.margin-bottom-five {
+  margin-bottom: 5px;
+}
+
+.column-full,
+.column-half {
+  padding: 0 0.75rem;
+}

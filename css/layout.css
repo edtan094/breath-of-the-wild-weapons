@@ -1,0 +1,51 @@
+.container {
+  max-width: 575px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-full,
+.column-half {
+  width: 100%;
+}
+
+.column-third {
+  width: calc(100% / 3);
+}
+
+.column-always-half {
+  width: 57%;
+}
+
+div.weapon-list {
+  margin-top: 100px;
+  justify-content: center;
+}
+
+.green-card {
+  margin-bottom: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 850px;
+  }
+
+  .column-half {
+    width: 50%;
+  }
+
+  .green-card {
+    margin-bottom: 35px;
+  }
+
+  div.weapon-list {
+    margin-top: 100px;
+    justify-content: space-between;
+  }
+}
