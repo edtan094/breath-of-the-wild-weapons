@@ -14,25 +14,38 @@
   width: 100%;
 }
 
-li {
-  width: 100%;
+.column-third {
+  width: calc(100% / 3);
+}
+
+.column-always-half {
+  width: 57%;
+}
+
+div.weapon-list {
+  margin-top: 100px;
+  justify-content: center;
+}
+
+.green-card {
+  margin-bottom: 18px;
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 1100px;
-  }
-
-  .column-full,
-  .column-half {
-    padding: 0 0.75rem;
+    max-width: 850px;
   }
 
   .column-half {
     width: 50%;
   }
 
-  li {
-    width: 40%;
+  .green-card {
+    margin-bottom: 35px;
+  }
+
+  div.weapon-list {
+    margin-top: 100px;
+    justify-content: space-between;
   }
 }

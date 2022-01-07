@@ -3,12 +3,70 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/equipment');
 xhr.responseType = 'json';
 xhr.addEventListener('load', function () {
-  console.log('status of xhr: ', xhr.status);
-  console.log('response of xhr: ', xhr.response);
-  var $newLi = document.createElement('li');
-  $newLi.textContent = xhr.response.data[0].name;
-  $weaponList.appendChild($newLi);
-  console.log(xhr.response.data[0].name);
-  console.log($weaponList);
+  var data = xhr.response.data;
+  for (var i = 0; i < data.length; i++) {
+
+    $weaponList.appendChild(generateDOM(data[i]));
+  }
 });
 xhr.send();
+
+function generateDOM(data) {
+  var $greenDiv = document.createElement('div');
+  $greenDiv.setAttribute('class', 'green-card column-half');
+
+  var $rowDiv = document.createElement('div');
+  $rowDiv.setAttribute('class', 'row justify-space-between');
+  $greenDiv.appendChild($rowDiv);
+
+  var $columnThirdDiv = document.createElement('div');
+  $columnThirdDiv.setAttribute('class', 'column-third');
+  $rowDiv.appendChild($columnThirdDiv);
+
+  var $img = document.createElement('img');
+  $img.setAttribute('class', 'image');
+  $img.setAttribute('src', data.image);
+  $columnThirdDiv.appendChild($img);
+
+  var $columnHalfDiv = document.createElement('div');
+  $columnHalfDiv.setAttribute('class', 'column-always-half');
+  $rowDiv.appendChild($columnHalfDiv);
+
+  var $paragraphName = document.createElement('p');
+  var lowerCasedName = data.name.toLowerCase();
+  var properName = '';
+  properName += lowerCasedName[0].toUpperCase();
+  for (var i = 1; i < lowerCasedName.length; i++) {
+    if (lowerCasedName[i - 1] === ' ') {
+      properName += lowerCasedName[i].toUpperCase();
+    } else if (lowerCasedName[i - 1] !== ' ') {
+      properName += lowerCasedName[i];
+    }
+  }
+  $paragraphName.textContent = properName;
+  $paragraphName.setAttribute('class', 'margin-top-five font-size-name');
+  $columnHalfDiv.appendChild($paragraphName);
+
+  var $paragraphLocation = document.createElement('p');
+  $paragraphLocation.textContent = 'Common Locations';
+  $paragraphLocation.setAttribute('class', 'margin-bottom-five font-size-common');
+  $columnHalfDiv.appendChild($paragraphLocation);
+
+  var $ul = document.createElement('ul');
+  $ul.setAttribute('class', 'margin-top-five');
+  $columnHalfDiv.appendChild($ul);
+
+  if (data.common_locations === null) {
+    var $unknownLi = document.createElement('li');
+    $unknownLi.textContent = 'unknown';
+    $ul.appendChild($unknownLi);
+  } else {
+    for (var locationIndex = 0; locationIndex < data.common_locations.length; locationIndex++) {
+      var $li = document.createElement('li');
+      $li.textContent = data.common_locations[locationIndex];
+      $ul.appendChild($li);
+    }
+  }
+  return $greenDiv;
+
+}
