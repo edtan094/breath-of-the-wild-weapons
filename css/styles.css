@@ -102,3 +102,8 @@ form {
 input {
   width: 100%;
 }
+
+.detail-icon {
+  color: white;
+  font-size: 15px;
+}
