@@ -1,6 +1,7 @@
 /* exported data */
 var data = {
   view: 'home-page',
+  clicked: {},
   saved: [],
   entry: null
 };

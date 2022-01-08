@@ -1,4 +1,4 @@
-.display-hidden {
+.hidden {
   display: none !important;
 }
 
@@ -79,12 +79,16 @@ li {
   margin-top: 5px;
 }
 
-.font-size-name {
+.font-size-17 {
   font-size: 17px;
 }
 
-.font-size-common {
+.font-size-15 {
   font-size: 15px;
+}
+
+.font-size-22 {
+  font-size: 22px;
 }
 
 .margin-bottom-five {
@@ -104,7 +108,7 @@ input {
   width: 100%;
 }
 
-.detail-icon {
+.search-icon {
   color: white;
   font-size: 15px;
 }
