@@ -30,11 +30,25 @@
   </header>
   <main>
     <div class="container">
-      <div data-view="home-page">
+      <div data-view="home-page" class="display-hidden">
         <div class="row justify-space-between weapon-list" id="weapon-list">
           <form>
             <input type="search" id="search" name="q" placeholder="Enter weapon name...">
           </form>
+        </div>
+      </div>
+      <div data-view="details" class="display">
+        <div class="row weapon-list">
+          <div class="column-half">
+            <div class="row justify-center">
+              <img class="image-in-details border-radius-and-shadow" src="https://botw-compendium.herokuapp.com/api/v2/entry/traveler's_sword/image">
+            </div>
+          </div>
+          <div class="column-half">
+            <div class="row green-card-details border-radius-and-shadow">
+              <h3>Description</h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>

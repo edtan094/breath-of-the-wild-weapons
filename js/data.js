@@ -1,7 +1,8 @@
 /* exported data */
 var data = {
   view: 'home-page',
-  saved: []
+  saved: [],
+  entry: null
 };
 
 var previousEntriesJSON = localStorage.getItem('entry');

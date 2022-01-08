@@ -13,7 +13,7 @@ xhr.send();
 
 function generateDOM(data) {
   var $greenDiv = document.createElement('div');
-  $greenDiv.setAttribute('class', 'green-card column-half');
+  $greenDiv.setAttribute('class', 'green-card column-half border-radius-and-shadow');
 
   var $rowDiv = document.createElement('div');
   $rowDiv.setAttribute('class', 'row justify-space-between');
