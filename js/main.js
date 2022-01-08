@@ -158,10 +158,8 @@ function previousDataView(data) {
       $allViews[viewIndex].classList.replace('hidden', 'display');
     }
   }
-  if (data.view !== 'home-page') {
-    $imageInDetails.setAttribute('src', data.clicked.image);
-    $descriptionInDetails.textContent = data.clicked.description;
-    $commonLocationsInDetails.textContent = data.clicked.common_locations;
-  }
+  $imageInDetails.setAttribute('src', data.clicked.image);
+  $descriptionInDetails.textContent = data.clicked.description;
+  $commonLocationsInDetails.textContent = data.clicked.common_locations;
 }
 previousDataView(data.view);
