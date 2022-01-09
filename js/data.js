@@ -6,7 +6,6 @@ var data = {
   entry: null
 };
 
-debugger;
 var previousEntriesJSON = localStorage.getItem('entry');
 if (previousEntriesJSON !== null) {
   data = JSON.parse(previousEntriesJSON);

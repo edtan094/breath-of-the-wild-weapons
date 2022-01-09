@@ -78,7 +78,6 @@ var $form = document.querySelector('form');
 var $input = document.querySelector('input');
 function searchBar(event) {
   event.preventDefault();
-  console.log('hello');
   var $allWeapons = document.querySelectorAll('.weapon-name');
   var inputValue = $input.value.toLowerCase();
   for (var nameIndex = 0; nameIndex < $allWeapons.length; nameIndex++) {
@@ -154,7 +153,7 @@ function clearDataClicked() {
 
 function previousDataView(data) {
   for (var viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
-    if (data === $allViews[viewIndex].getAttribute('data-view')) {
+    if (data.view === $allViews[viewIndex].getAttribute('data-view')) {
       $allViews[viewIndex].classList.replace('hidden', 'display');
     }
   }
@@ -162,4 +161,4 @@ function previousDataView(data) {
   $descriptionInDetails.textContent = data.clicked.description;
   $commonLocationsInDetails.textContent = data.clicked.common_locations;
 }
-previousDataView(data.view);
+previousDataView(data);
