@@ -136,8 +136,11 @@ function switchViews(event) {
   if (event.target.matches('.weapons')) {
     loopThroughViews('details');
   }
-  if (event.target.matches('.search-icon')) {
+  if (event.target.matches('.home')) {
     loopThroughViews('home-page');
+  }
+  if (event.target.matches('.saved-weapon-list')) {
+    loopThroughViews('saved');
   }
 }
 document.addEventListener('click', switchViews);
