@@ -136,12 +136,16 @@ function switchViews(event) {
   if (event.target.matches('.weapons')) {
     loopThroughViews('details');
   }
-  if (event.target.matches('.search-icon')) {
+  if (event.target.matches('.home')) {
     loopThroughViews('home-page');
+  }
+  if (event.target.matches('.saved-weapon-list')) {
+    loopThroughViews('saved');
   }
 }
 document.addEventListener('click', switchViews);
 
+var $savedWeaponList = document.querySelector('#saved-weapon-list');
 function previousDataView(data) {
   for (var viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
     if (data.view === $allViews[viewIndex].getAttribute('data-view')) {
@@ -151,5 +155,21 @@ function previousDataView(data) {
   $imageInDetails.setAttribute('src', data.clicked.image);
   $descriptionInDetails.textContent = data.clicked.description;
   $commonLocationsInDetails.textContent = data.clicked.common_locations;
+
+  if (data.view === 'saved') {
+    for (var i = 0; i < data.saved.length; i++) {
+      $savedWeaponList.appendChild(generateDOM(data.saved[i]));
+    }
+  }
 }
 previousDataView(data);
+
+function saveWeapon(event) {
+  if (event.target.matches('.save-button')) {
+    data.saved.push(data.clicked);
+    $savedWeaponList.appendChild(generateDOM(data.clicked));
+    loopThroughViews('saved');
+  }
+}
+var $saveButton = document.querySelector('.save-button');
+$saveButton.addEventListener('click', saveWeapon);

@@ -22,7 +22,10 @@
         <div class="column-full">
           <div class="row align-center white-text justify-space-between">
             <h3>Breath of The Wild Weapons</h3>
-            <i class="fas fa-search search-icon"></i>
+            <div class="row justify-end">
+              <i class="fas fa-home home margin-right"></i>
+              <i class="fas fa-star saved-weapon-list"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -48,9 +51,15 @@
             <div class="row green-card-details border-radius-and-shadow">
               <p class="font-size-22 margin-left">Description <br> <span class="font-size-15 description"></span></p>
               <p class="font-size-22 margin-left">Common Locations <br> <span class="font-size-15 common-locations"></span></p>
+              <div class="row justify-end width-100 align-center">
+                <button class="save-button">Save</button>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div data-view="saved" class="hidden view">
+        <div class="row justify-space-between weapon-list" id="saved-weapon-list"></div>
       </div>
     </div>
   </main>
