@@ -8,6 +8,11 @@ p {
 
 h3 {
   font-family: Rye, cursive, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+button {
+  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
 }
 
 .brown-background {
@@ -49,12 +54,18 @@ body {
   height: 126px;
   width: 326px;
   background-color: #d9f9d3;
-
-  /* border-radius: 10px; */
 }
 
 .justify-space-between {
   justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.width-100 {
+  width: 100%;
 }
 
 .image {
@@ -123,4 +134,12 @@ input {
 .border-radius-and-shadow {
   box-shadow: 5px 10px rgba(63, 61, 61, 0.253);
   border-radius: 10px;
+}
+
+.save-button {
+  background: none;
+  border: solid;
+  border-radius: 4px;
+  margin-right: 10px;
+  border-width: 2px;
 }
