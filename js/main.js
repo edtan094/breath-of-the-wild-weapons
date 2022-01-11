@@ -11,10 +11,10 @@ xhr.addEventListener('load', function () {
 });
 xhr.send();
 
-function generateDOM(data) {
+function generateDOM(info) {
   var $greenDiv = document.createElement('div');
   $greenDiv.setAttribute('class', 'green-card column-half border-radius-and-shadow weapons');
-  $greenDiv.setAttribute('id', data.id);
+  $greenDiv.setAttribute('id', info.id);
 
   var $rowDiv = document.createElement('div');
   $rowDiv.setAttribute('class', 'row justify-space-between weapons');
@@ -26,7 +26,7 @@ function generateDOM(data) {
 
   var $img = document.createElement('img');
   $img.setAttribute('class', 'image weapons');
-  $img.setAttribute('src', data.image);
+  $img.setAttribute('src', info.image);
   $columnThirdDiv.appendChild($img);
 
   var $columnHalfDiv = document.createElement('div');
@@ -34,7 +34,7 @@ function generateDOM(data) {
   $rowDiv.appendChild($columnHalfDiv);
 
   var $paragraphName = document.createElement('p');
-  var lowerCasedName = data.name.toLowerCase();
+  var lowerCasedName = info.name.toLowerCase();
   var properName = '';
   properName += lowerCasedName[0].toUpperCase();
   for (var i = 1; i < lowerCasedName.length; i++) {
@@ -54,18 +54,27 @@ function generateDOM(data) {
   $columnHalfDiv.appendChild($paragraphLocation);
 
   var $ul = document.createElement('ul');
-  $ul.setAttribute('class', 'margin-top-five weapons');
+  $ul.setAttribute('class', 'margin-top-five weapons margin-bottom-five');
   $columnHalfDiv.appendChild($ul);
+  if (data.view === 'saved') {
+    var $deleteButton = document.createElement('button');
+    var $divForDeleteButton = document.createElement('div');
+    $deleteButton.setAttribute('class', 'delete-button');
+    $deleteButton.textContent = 'Delete';
+    $divForDeleteButton.setAttribute('class', 'row justify-end');
+    $divForDeleteButton.appendChild($deleteButton);
+    $columnHalfDiv.appendChild($divForDeleteButton);
+  }
 
-  if (data.common_locations === null) {
+  if (info.common_locations === null) {
     var $unknownLi = document.createElement('li');
     $unknownLi.textContent = 'unknown';
     $unknownLi.setAttribute('class', 'weapons');
     $ul.appendChild($unknownLi);
   } else {
-    for (var locationIndex = 0; locationIndex < data.common_locations.length; locationIndex++) {
+    for (var locationIndex = 0; locationIndex < info.common_locations.length; locationIndex++) {
       var $li = document.createElement('li');
-      $li.textContent = data.common_locations[locationIndex];
+      $li.textContent = info.common_locations[locationIndex];
       $li.setAttribute('class', 'weapons');
       $ul.appendChild($li);
     }
@@ -167,8 +176,8 @@ previousDataView(data);
 function saveWeapon(event) {
   if (event.target.matches('.save-button')) {
     data.saved.push(data.clicked);
-    $savedWeaponList.appendChild(generateDOM(data.clicked));
     loopThroughViews('saved');
+    $savedWeaponList.appendChild(generateDOM(data.clicked));
   }
 }
 var $saveButton = document.querySelector('.save-button');
