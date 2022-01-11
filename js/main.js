@@ -125,8 +125,7 @@ function loopThroughViews(view) {
   for (var viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
     if ($allViews[viewIndex].getAttribute('data-view') !== view) {
       $allViews[viewIndex].classList.replace('display', 'hidden');
-    }
-    if ($allViews[viewIndex].getAttribute('data-view') === view) {
+    } else {
       $allViews[viewIndex].classList.replace('hidden', 'display');
       data.view = view;
     }
