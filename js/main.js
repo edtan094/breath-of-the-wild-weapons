@@ -120,36 +120,28 @@ function bringUserToDetailsPage(event) {
 document.addEventListener('click', bringUserToDetailsPage);
 
 var $allViews = document.querySelectorAll('.view');
-function switchViews(event) {
-  if (event.target.matches('.weapons')) {
-    for (var viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
-      if ($allViews[viewIndex].getAttribute('data-view') === 'home-page') {
-        $allViews[viewIndex].classList.replace('display', 'hidden');
-      }
-      if ($allViews[viewIndex].getAttribute('data-view') === 'details') {
-        $allViews[viewIndex].classList.replace('hidden', 'display');
-        data.view = 'details';
-      }
+
+function loopThroughViews(view) {
+  for (var viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
+    if ($allViews[viewIndex].getAttribute('data-view') !== view) {
+      $allViews[viewIndex].classList.replace('display', 'hidden');
+    }
+    if ($allViews[viewIndex].getAttribute('data-view') === view) {
+      $allViews[viewIndex].classList.replace('hidden', 'display');
+      data.view = view;
     }
   }
+}
+
+function switchViews(event) {
+  if (event.target.matches('.weapons')) {
+    loopThroughViews('details');
+  }
   if (event.target.matches('.search-icon')) {
-    for (viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
-      if ($allViews[viewIndex].getAttribute('data-view') === 'home-page') {
-        $allViews[viewIndex].classList.replace('hidden', 'display');
-      }
-      if ($allViews[viewIndex].getAttribute('data-view') === 'details') {
-        $allViews[viewIndex].classList.replace('display', 'hidden');
-        data.view = 'home-page';
-        clearDataClicked();
-      }
-    }
+    loopThroughViews('home-page');
   }
 }
 document.addEventListener('click', switchViews);
-
-function clearDataClicked() {
-  data.clicked = {};
-}
 
 function previousDataView(data) {
   for (var viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
