@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
 </head>
 
 <body>
@@ -17,8 +20,9 @@
     <div class="container">
       <div class="row">
         <div class="column-full">
-          <div class="row align-center white-text">
+          <div class="row align-center white-text justify-space-between">
             <h3>Breath of The Wild Weapons</h3>
+            <i class="fas fa-search search-icon"></i>
           </div>
         </div>
       </div>
@@ -26,11 +30,26 @@
   </header>
   <main>
     <div class="container">
-      <div data-view="home-page">
+      <div data-view="home-page" class="hidden view ">
         <div class="row justify-space-between weapon-list" id="weapon-list">
           <form>
             <input type="search" id="search" name="q" placeholder="Enter weapon name...">
           </form>
+        </div>
+      </div>
+      <div data-view="details" class="hidden view">
+        <div class="row weapon-list">
+          <div class="column-half">
+            <div class="row justify-center">
+              <img class="image-in-details border-radius-and-shadow" src="none">
+            </div>
+          </div>
+          <div class="column-half">
+            <div class="row green-card-details border-radius-and-shadow">
+              <p class="font-size-22 margin-left">Description <br> <span class="font-size-15 description"></span></p>
+              <p class="font-size-22 margin-left">Common Locations <br> <span class="font-size-15 common-locations"></span></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

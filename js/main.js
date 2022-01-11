@@ -13,23 +13,24 @@ xhr.send();
 
 function generateDOM(data) {
   var $greenDiv = document.createElement('div');
-  $greenDiv.setAttribute('class', 'green-card column-half');
+  $greenDiv.setAttribute('class', 'green-card column-half border-radius-and-shadow weapons');
+  $greenDiv.setAttribute('id', data.id);
 
   var $rowDiv = document.createElement('div');
-  $rowDiv.setAttribute('class', 'row justify-space-between');
+  $rowDiv.setAttribute('class', 'row justify-space-between weapons');
   $greenDiv.appendChild($rowDiv);
 
   var $columnThirdDiv = document.createElement('div');
-  $columnThirdDiv.setAttribute('class', 'column-third');
+  $columnThirdDiv.setAttribute('class', 'column-third weapons');
   $rowDiv.appendChild($columnThirdDiv);
 
   var $img = document.createElement('img');
-  $img.setAttribute('class', 'image');
+  $img.setAttribute('class', 'image weapons');
   $img.setAttribute('src', data.image);
   $columnThirdDiv.appendChild($img);
 
   var $columnHalfDiv = document.createElement('div');
-  $columnHalfDiv.setAttribute('class', 'column-always-half');
+  $columnHalfDiv.setAttribute('class', 'column-always-half weapons');
   $rowDiv.appendChild($columnHalfDiv);
 
   var $paragraphName = document.createElement('p');
@@ -44,26 +45,28 @@ function generateDOM(data) {
     }
   }
   $paragraphName.textContent = properName;
-  $paragraphName.setAttribute('class', 'margin-top-five font-size-name weapon-name');
+  $paragraphName.setAttribute('class', 'margin-top-five font-size-17 weapon-name weapons');
   $columnHalfDiv.appendChild($paragraphName);
 
   var $paragraphLocation = document.createElement('p');
   $paragraphLocation.textContent = 'Common Locations';
-  $paragraphLocation.setAttribute('class', 'margin-bottom-five font-size-common');
+  $paragraphLocation.setAttribute('class', 'margin-bottom-five font-size-15 weapons');
   $columnHalfDiv.appendChild($paragraphLocation);
 
   var $ul = document.createElement('ul');
-  $ul.setAttribute('class', 'margin-top-five');
+  $ul.setAttribute('class', 'margin-top-five weapons');
   $columnHalfDiv.appendChild($ul);
 
   if (data.common_locations === null) {
     var $unknownLi = document.createElement('li');
     $unknownLi.textContent = 'unknown';
+    $unknownLi.setAttribute('class', 'weapons');
     $ul.appendChild($unknownLi);
   } else {
     for (var locationIndex = 0; locationIndex < data.common_locations.length; locationIndex++) {
       var $li = document.createElement('li');
       $li.textContent = data.common_locations[locationIndex];
+      $li.setAttribute('class', 'weapons');
       $ul.appendChild($li);
     }
   }
@@ -80,11 +83,73 @@ function searchBar(event) {
   for (var nameIndex = 0; nameIndex < $allWeapons.length; nameIndex++) {
     var weaponName = $allWeapons[nameIndex].textContent.toLowerCase();
     var $weaponToBeHidden = $allWeapons[nameIndex].closest('.green-card');
-    $weaponToBeHidden.classList.add('display-hidden');
+    $weaponToBeHidden.classList.add('hidden');
     if (weaponName.includes(inputValue)) {
-      $weaponToBeHidden.classList.remove('display-hidden');
+      $weaponToBeHidden.classList.remove('hidden');
     }
   }
 }
 
 $form.addEventListener('submit', searchBar);
+
+var $imageInDetails = document.querySelector('.image-in-details');
+var $descriptionInDetails = document.querySelector('.description');
+var $commonLocationsInDetails = document.querySelector('.common-locations');
+function bringUserToDetailsPage(event) {
+  if (event.target.matches('.weapons')) {
+    var weaponThatWasClicked = event.target.closest('.green-card');
+    var weaponThatWasClickedID = weaponThatWasClicked.getAttribute('id');
+    weaponThatWasClickedID = parseInt(weaponThatWasClickedID);
+    var dataBOTW = xhr.response.data;
+    for (var dataIndex = 0; dataIndex < dataBOTW.length; dataIndex++) {
+      if (dataBOTW[dataIndex].id === weaponThatWasClickedID) {
+        data.clicked.name = dataBOTW[dataIndex].name;
+        data.clicked.image = dataBOTW[dataIndex].image;
+        data.clicked.description = dataBOTW[dataIndex].description;
+        data.clicked.common_locations = dataBOTW[dataIndex].common_locations;
+        data.clicked.id = dataBOTW[dataIndex].id;
+        $imageInDetails.setAttribute('src', data.clicked.image);
+        $descriptionInDetails.textContent = data.clicked.description;
+        $commonLocationsInDetails.textContent = data.clicked.common_locations;
+      }
+    }
+  }
+
+}
+
+document.addEventListener('click', bringUserToDetailsPage);
+
+var $allViews = document.querySelectorAll('.view');
+
+function loopThroughViews(view) {
+  for (var viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
+    if ($allViews[viewIndex].getAttribute('data-view') !== view) {
+      $allViews[viewIndex].classList.replace('display', 'hidden');
+    } else {
+      $allViews[viewIndex].classList.replace('hidden', 'display');
+      data.view = view;
+    }
+  }
+}
+
+function switchViews(event) {
+  if (event.target.matches('.weapons')) {
+    loopThroughViews('details');
+  }
+  if (event.target.matches('.search-icon')) {
+    loopThroughViews('home-page');
+  }
+}
+document.addEventListener('click', switchViews);
+
+function previousDataView(data) {
+  for (var viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
+    if (data.view === $allViews[viewIndex].getAttribute('data-view')) {
+      $allViews[viewIndex].classList.replace('hidden', 'display');
+    }
+  }
+  $imageInDetails.setAttribute('src', data.clicked.image);
+  $descriptionInDetails.textContent = data.clicked.description;
+  $commonLocationsInDetails.textContent = data.clicked.common_locations;
+}
+previousDataView(data);

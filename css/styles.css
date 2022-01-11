@@ -1,4 +1,4 @@
-.display-hidden {
+.hidden {
   display: none !important;
 }
 
@@ -49,7 +49,8 @@ body {
   height: 126px;
   width: 326px;
   background-color: #d9f9d3;
-  border-radius: 10px;
+
+  /* border-radius: 10px; */
 }
 
 .justify-space-between {
@@ -78,12 +79,16 @@ li {
   margin-top: 5px;
 }
 
-.font-size-name {
+.font-size-17 {
   font-size: 17px;
 }
 
-.font-size-common {
+.font-size-15 {
   font-size: 15px;
+}
+
+.font-size-22 {
+  font-size: 22px;
 }
 
 .margin-bottom-five {
@@ -101,4 +106,21 @@ form {
 
 input {
   width: 100%;
+}
+
+.search-icon {
+  color: white;
+  font-size: 15px;
+}
+
+.green-card-details {
+  height: 419px;
+  width: 326px;
+  background-color: #d9f9d3;
+  border-radius: 10px;
+}
+
+.border-radius-and-shadow {
+  box-shadow: 5px 10px rgba(63, 61, 61, 0.253);
+  border-radius: 10px;
 }
