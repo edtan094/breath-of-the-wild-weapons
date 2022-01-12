@@ -41,6 +41,10 @@ form {
   margin-bottom: 22px;
 }
 
+h3 {
+  font-size: 11px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 850px;
@@ -67,12 +71,8 @@ form {
     height: 312px;
     width: 312px;
   }
-}
 
-.justify-center {
-  justify-content: center;
-}
-
-.margin-left {
-  margin-left: 10px;
+  h3 {
+    font-size: 16px;
+  }
 }

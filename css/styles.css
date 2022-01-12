@@ -8,7 +8,6 @@ p {
 
 h3 {
   font-family: Rye, cursive, Arial, Helvetica, sans-serif;
-  font-size: 16px;
 }
 
 button {
@@ -147,4 +146,33 @@ input {
 
 .margin-right {
   margin-right: 10px;
+}
+
+.delete-button {
+  background: none;
+  border: solid;
+  border-radius: 4px;
+  border-width: 2px;
+  height: 22px;
+  color: red;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.max-height-48 {
+  max-height: 48px;
 }
