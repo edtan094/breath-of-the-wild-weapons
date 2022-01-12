@@ -143,9 +143,6 @@ function switchViews(event) {
     loopThroughViews('home-page');
   }
   if (event.target.matches('.saved-weapon-list')) {
-    for (var i = 0; i < data.saved.length; i++) {
-      $savedWeaponList.appendChild(generateDOM(data.saved[i]));
-    }
     loopThroughViews('saved');
   }
 }
@@ -162,10 +159,8 @@ function previousDataView(data) {
   $imageInDetails.setAttribute('src', data.clicked.image);
   $descriptionInDetails.textContent = data.clicked.description;
   $commonLocationsInDetails.textContent = data.clicked.common_locations;
-  if (data.view === 'saved') {
-    for (var i = 0; i < data.saved.length; i++) {
-      $savedWeaponList.appendChild(generateDOM(data.saved[i]));
-    }
+  for (var i = 0; i < data.saved.length; i++) {
+    $savedWeaponList.appendChild(generateDOM(data.saved[i]));
   }
   loopThroughViews(data.view);
 }
