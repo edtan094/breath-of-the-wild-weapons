@@ -53,6 +53,7 @@ body {
   height: 126px;
   width: 326px;
   background-color: #d9f9d3;
+  border: none;
 }
 
 .justify-space-between {

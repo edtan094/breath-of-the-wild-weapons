@@ -12,13 +12,13 @@ xhr.addEventListener('load', function () {
 xhr.send();
 
 function generateDOM(info) {
-  var $greenDiv = document.createElement('div');
-  $greenDiv.setAttribute('class', 'green-card column-half border-radius-and-shadow weapons');
-  $greenDiv.setAttribute('id', info.id);
+  var $greenButton = document.createElement('button');
+  $greenButton.setAttribute('class', 'green-card column-half border-radius-and-shadow weapons');
+  $greenButton.setAttribute('id', info.id);
 
   var $rowDiv = document.createElement('div');
   $rowDiv.setAttribute('class', 'row justify-space-between weapons');
-  $greenDiv.appendChild($rowDiv);
+  $greenButton.appendChild($rowDiv);
 
   var $columnThirdDiv = document.createElement('div');
   $columnThirdDiv.setAttribute('class', 'column-third weapons');
@@ -78,7 +78,7 @@ function generateDOM(info) {
       $ul.appendChild($li);
     }
   }
-  return $greenDiv;
+  return $greenButton;
 
 }
 
