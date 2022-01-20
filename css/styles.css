@@ -103,7 +103,7 @@ li {
   font-size: 22px;
 }
 
-.margin-bottom-five {
+.margin-bottom-5 {
   margin-bottom: 5px;
 }
 
@@ -146,10 +146,6 @@ input {
   height: 22px;
 }
 
-.margin-right {
-  margin-right: 10px;
-}
-
 .delete-button {
   background: none;
   border: solid;
@@ -163,7 +159,7 @@ input {
   justify-content: center;
 }
 
-.margin-left {
+.margin-left-10 {
   margin-left: 10px;
 }
 
@@ -179,14 +175,14 @@ input {
   max-height: 48px;
 }
 
-.margin-bottom-10 {
-  margin-bottom: 10px;
-}
-
 .margin-right-0 {
   margin-right: 0;
 }
 
 .align-items-end {
   align-items: flex-end;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
 }

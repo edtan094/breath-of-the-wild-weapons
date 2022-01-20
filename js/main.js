@@ -50,11 +50,11 @@ function generateDOM(info) {
 
   var $paragraphLocation = document.createElement('p');
   $paragraphLocation.textContent = 'Common Locations';
-  $paragraphLocation.setAttribute('class', 'margin-bottom-five font-size-15 weapons margin-top-0');
+  $paragraphLocation.setAttribute('class', 'margin-bottom-5 font-size-15 weapons margin-top-0');
   $columnHalfDiv.appendChild($paragraphLocation);
 
   var $ul = document.createElement('ul');
-  $ul.setAttribute('class', 'margin-top-five weapons margin-bottom-five max-height-48');
+  $ul.setAttribute('class', 'margin-top-five weapons margin-bottom-5 max-height-48');
   $columnHalfDiv.appendChild($ul);
   var $deleteButton = document.createElement('button');
   var $formForDeleteButton = document.createElement('form');
