@@ -57,12 +57,15 @@ function generateDOM(info) {
   $ul.setAttribute('class', 'margin-top-five weapons margin-bottom-five max-height-48');
   $columnHalfDiv.appendChild($ul);
   var $deleteButton = document.createElement('button');
+  var $formForDeleteButton = document.createElement('form');
   var $divForDeleteButton = document.createElement('div');
   $deleteButton.setAttribute('class', 'delete-button');
   $deleteButton.textContent = 'Delete';
+  $formForDeleteButton.setAttribute('class', 'row justify-end');
   $divForDeleteButton.setAttribute('class', 'hidden view row justify-end');
   $divForDeleteButton.setAttribute('data-view', 'saved');
-  $divForDeleteButton.appendChild($deleteButton);
+  $formForDeleteButton.appendChild($deleteButton);
+  $divForDeleteButton.appendChild($formForDeleteButton);
   $columnHalfDiv.appendChild($divForDeleteButton);
 
   if (info.common_locations === null) {
