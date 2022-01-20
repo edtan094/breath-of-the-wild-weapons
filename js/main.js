@@ -12,13 +12,13 @@ xhr.addEventListener('load', function () {
 xhr.send();
 
 function generateDOM(info) {
-  var $greenDiv = document.createElement('div');
-  $greenDiv.setAttribute('class', 'green-card column-half border-radius-and-shadow weapons');
-  $greenDiv.setAttribute('id', info.id);
+  var $greenButton = document.createElement('button');
+  $greenButton.setAttribute('class', 'green-card column-half border-radius-and-shadow weapons');
+  $greenButton.setAttribute('id', info.id);
 
   var $rowDiv = document.createElement('div');
   $rowDiv.setAttribute('class', 'row justify-space-between weapons');
-  $greenDiv.appendChild($rowDiv);
+  $greenButton.appendChild($rowDiv);
 
   var $columnThirdDiv = document.createElement('div');
   $columnThirdDiv.setAttribute('class', 'column-third weapons');
@@ -50,11 +50,11 @@ function generateDOM(info) {
 
   var $paragraphLocation = document.createElement('p');
   $paragraphLocation.textContent = 'Common Locations';
-  $paragraphLocation.setAttribute('class', 'margin-bottom-five font-size-15 weapons margin-top-0');
+  $paragraphLocation.setAttribute('class', 'margin-bottom-5 font-size-15 weapons margin-top-0');
   $columnHalfDiv.appendChild($paragraphLocation);
 
   var $ul = document.createElement('ul');
-  $ul.setAttribute('class', 'margin-top-five weapons margin-bottom-five max-height-48');
+  $ul.setAttribute('class', 'margin-top-five weapons margin-bottom-5 max-height-48');
   $columnHalfDiv.appendChild($ul);
   var $deleteButton = document.createElement('button');
   var $divForDeleteButton = document.createElement('div');
@@ -78,7 +78,7 @@ function generateDOM(info) {
       $ul.appendChild($li);
     }
   }
-  return $greenDiv;
+  return $greenButton;
 
 }
 

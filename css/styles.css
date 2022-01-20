@@ -53,6 +53,8 @@ body {
   height: 126px;
   width: 326px;
   background-color: #d9f9d3;
+  border: none;
+  text-align: start;
 }
 
 .justify-space-between {
@@ -101,7 +103,7 @@ li {
   font-size: 22px;
 }
 
-.margin-bottom-five {
+.margin-bottom-5 {
   margin-bottom: 5px;
 }
 
@@ -144,10 +146,6 @@ input {
   height: 22px;
 }
 
-.margin-right {
-  margin-right: 10px;
-}
-
 .delete-button {
   background: none;
   border: solid;
@@ -161,7 +159,7 @@ input {
   justify-content: center;
 }
 
-.margin-left {
+.margin-left-10 {
   margin-left: 10px;
 }
 
@@ -175,4 +173,8 @@ input {
 
 .max-height-48 {
   max-height: 48px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
 }
