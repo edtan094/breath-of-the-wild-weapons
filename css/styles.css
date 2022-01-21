@@ -12,6 +12,8 @@ h3 {
 
 button {
   font-family: Rye, cursive, Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: background-color 1s;
 }
 
 .brown-background {
@@ -162,6 +164,19 @@ input {
 
 .margin-right-10 {
   margin-right: 10px;
+}
+
+a {
+  cursor: pointer;
+  transition: color 1s;
+}
+
+a:hover {
+  color: rgb(128, 166, 231);
+}
+
+button:hover {
+  background-color: rgb(128, 166, 231);
 }
 
 .lds-roller {
