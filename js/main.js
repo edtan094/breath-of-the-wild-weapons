@@ -137,12 +137,14 @@ function loopThroughViews(view) {
   }
 }
 
+var $searchBar = document.querySelector('#search');
 function switchViews(event) {
   if (event.target.matches('.weapons')) {
     loopThroughViews('details');
   }
   if (event.target.matches('.home')) {
     loopThroughViews('home-page');
+    $searchBar.value = null;
   }
   if (event.target.matches('.saved-weapon-list')) {
     loopThroughViews('saved');

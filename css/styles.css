@@ -91,14 +91,6 @@ li {
   margin-top: 5px;
 }
 
-.font-size-17 {
-  font-size: 17px;
-}
-
-.font-size-15 {
-  font-size: 15px;
-}
-
 .font-size-22 {
   font-size: 22px;
 }
@@ -123,13 +115,6 @@ input {
 .search-icon {
   color: white;
   font-size: 15px;
-}
-
-.green-card-details {
-  height: 419px;
-  width: 326px;
-  background-color: #d9f9d3;
-  border-radius: 10px;
 }
 
 .border-radius-and-shadow {
