@@ -1,4 +1,5 @@
 var $weaponList = document.querySelector('#weapon-list');
+var $loadingSpinner = document.querySelector('#loading-spinner');
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/equipment');
 xhr.responseType = 'json';
@@ -7,6 +8,7 @@ xhr.addEventListener('load', function () {
   for (var i = 0; i < data.length; i++) {
 
     $weaponList.appendChild(generateDOM(data[i]));
+    $loadingSpinner.classList.replace('display', 'hidden');
   }
 });
 xhr.send();
