@@ -1,4 +1,5 @@
 var $weaponList = document.querySelector('#weapon-list');
+var $loadingSpinner = document.querySelector('#loading-spinner');
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/equipment');
 xhr.responseType = 'json';
@@ -7,6 +8,7 @@ xhr.addEventListener('load', function () {
   for (var i = 0; i < data.length; i++) {
 
     $weaponList.appendChild(generateDOM(data[i]));
+    $loadingSpinner.classList.replace('display', 'hidden');
   }
 });
 xhr.send();
@@ -84,17 +86,24 @@ function generateDOM(info) {
 
 var $form = document.querySelector('form');
 var $input = document.querySelector('input');
+var $noWeaponsFound = document.querySelector('.no-weapons-found');
 function searchBar(event) {
   event.preventDefault();
   var $allWeapons = document.querySelectorAll('.weapon-name');
   var inputValue = $input.value.toLowerCase();
+  var foundWeaponStatus = false;
+  $noWeaponsFound.classList.replace('display', 'hidden');
   for (var nameIndex = 0; nameIndex < $allWeapons.length; nameIndex++) {
     var weaponName = $allWeapons[nameIndex].textContent.toLowerCase();
     var $weaponToBeHidden = $allWeapons[nameIndex].closest('.green-card');
     $weaponToBeHidden.classList.add('hidden');
     if (weaponName.includes(inputValue)) {
       $weaponToBeHidden.classList.remove('hidden');
+      foundWeaponStatus = true;
     }
+  }
+  if (foundWeaponStatus === false) {
+    $noWeaponsFound.classList.replace('hidden', 'display');
   }
 }
 
@@ -135,15 +144,21 @@ function loopThroughViews(view) {
   }
 }
 
+var $searchBar = document.querySelector('#search');
+
 function switchViews(event) {
   if (event.target.matches('.weapons')) {
     loopThroughViews('details');
   }
   if (event.target.matches('.home')) {
     loopThroughViews('home-page');
+    $searchBar.value = null;
+    displayAllWeapons();
   }
   if (event.target.matches('.saved-weapon-list')) {
     loopThroughViews('saved');
+    noWeaponsSaved();
+    displayAllWeapons();
   }
 }
 document.addEventListener('click', switchViews);
@@ -177,6 +192,7 @@ function saveWeapon(event) {
     var $savedWeaponList = document.querySelector('#saved-weapon-list');
     $savedWeaponList.appendChild(generateDOM(data.clicked));
     loopThroughViews('saved');
+    noWeaponsSaved();
   }
 }
 var $saveButton = document.querySelector('.save-button');
@@ -190,8 +206,27 @@ function deleteWeapon(event) {
       if (data.saved[savedIndex].id === $weaponToBeDeletedID) {
         data.saved.splice(savedIndex, 1);
         $savedWeaponList.removeChild($weaponToBeDeleted);
+        noWeaponsSaved();
       }
     }
   }
 }
 document.addEventListener('click', deleteWeapon);
+
+var $noWeaponsSavedText = document.querySelector('.no-weapons-saved');
+function noWeaponsSaved() {
+  if (data.saved.length > 0) {
+    $noWeaponsSavedText.classList.replace('display', 'hidden');
+  } else if (data.saved.length === 0) {
+    $noWeaponsSavedText.classList.replace('hidden', 'display');
+  }
+
+}
+noWeaponsSaved();
+
+function displayAllWeapons() {
+  var $allWeapons = document.querySelectorAll('.green-card');
+  for (var i = 0; i < $allWeapons.length; i++) {
+    $allWeapons[i].classList.replace('hidden', 'display');
+  }
+}

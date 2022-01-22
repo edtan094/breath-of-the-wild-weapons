@@ -39,6 +39,21 @@
             <input type="search" id="search" name="q" placeholder="Enter weapon name...">
           </form>
         </div>
+        <div class="row justify-center hidden no-weapons-found">
+          <p>No weapons found....</p>
+        </div>
+        <div class="row justify-center display" id="loading-spinner">
+          <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </div>
       <div data-view="details" class="hidden view">
         <div class="row weapon-list">
@@ -59,7 +74,11 @@
         </div>
       </div>
       <div data-view="saved" class="hidden view">
-        <div class="row justify-space-between weapon-list" id="saved-weapon-list"></div>
+        <div class="row justify-space-between weapon-list" id="saved-weapon-list">
+          <div class="column-full justify-center display no-weapons-saved hidden">
+            <p>No Weapons saved....</p>
+          </div>
+        </div>
       </div>
     </div>
   </main>

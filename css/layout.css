@@ -45,6 +45,21 @@ h3 {
   font-size: 11px;
 }
 
+.font-size-17 {
+  font-size: 17px;
+}
+
+.font-size-15 {
+  font-size: 15px;
+}
+
+.green-card-details {
+  height: 419px;
+  width: 326px;
+  background-color: #d9f9d3;
+  border-radius: 10px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 850px;
@@ -74,5 +89,35 @@ h3 {
 
   h3 {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .green-card-details {
+    height: 419px;
+    width: 280px;
+    background-color: #d9f9d3;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .column-always-half {
+    width: 45%;
+  }
+
+  .font-size-17 {
+    font-size: 13px;
+  }
+
+  .font-size-15 {
+    font-size: 11px;
+  }
+
+  .green-card-details {
+    height: 419px;
+    width: 250px;
+    background-color: #d9f9d3;
+    border-radius: 10px;
   }
 }
