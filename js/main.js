@@ -138,6 +138,7 @@ function loopThroughViews(view) {
 }
 
 var $searchBar = document.querySelector('#search');
+
 function switchViews(event) {
   if (event.target.matches('.weapons')) {
     loopThroughViews('details');
@@ -148,6 +149,7 @@ function switchViews(event) {
   }
   if (event.target.matches('.saved-weapon-list')) {
     loopThroughViews('saved');
+    noWeaponsSaved();
   }
 }
 document.addEventListener('click', switchViews);
@@ -181,6 +183,7 @@ function saveWeapon(event) {
     var $savedWeaponList = document.querySelector('#saved-weapon-list');
     $savedWeaponList.appendChild(generateDOM(data.clicked));
     loopThroughViews('saved');
+    noWeaponsSaved();
   }
 }
 var $saveButton = document.querySelector('.save-button');
@@ -194,8 +197,20 @@ function deleteWeapon(event) {
       if (data.saved[savedIndex].id === $weaponToBeDeletedID) {
         data.saved.splice(savedIndex, 1);
         $savedWeaponList.removeChild($weaponToBeDeleted);
+        noWeaponsSaved();
       }
     }
   }
 }
 document.addEventListener('click', deleteWeapon);
+
+var $noWeaponsSavedText = document.querySelector('.no-weapons-saved');
+function noWeaponsSaved() {
+  if (data.saved.length > 0) {
+    $noWeaponsSavedText.classList.replace('display', 'hidden');
+  } else if (data.saved.length === 0) {
+    $noWeaponsSavedText.classList.replace('hidden', 'display');
+  }
+
+}
+noWeaponsSaved();

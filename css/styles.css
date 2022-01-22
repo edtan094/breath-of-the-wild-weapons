@@ -179,6 +179,10 @@ button:hover {
   background-color: rgb(128, 166, 231);
 }
 
+.no-weapons-saved {
+  text-align: center;
+}
+
 .lds-roller {
   display: inline-block;
   position: relative;
