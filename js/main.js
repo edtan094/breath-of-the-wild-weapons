@@ -86,17 +86,24 @@ function generateDOM(info) {
 
 var $form = document.querySelector('form');
 var $input = document.querySelector('input');
+var $noWeaponsFound = document.querySelector('.no-weapons-found');
 function searchBar(event) {
   event.preventDefault();
   var $allWeapons = document.querySelectorAll('.weapon-name');
   var inputValue = $input.value.toLowerCase();
+  var foundWeaponStatus = false;
+  $noWeaponsFound.classList.replace('display', 'hidden');
   for (var nameIndex = 0; nameIndex < $allWeapons.length; nameIndex++) {
     var weaponName = $allWeapons[nameIndex].textContent.toLowerCase();
     var $weaponToBeHidden = $allWeapons[nameIndex].closest('.green-card');
     $weaponToBeHidden.classList.add('hidden');
     if (weaponName.includes(inputValue)) {
       $weaponToBeHidden.classList.remove('hidden');
+      foundWeaponStatus = true;
     }
+  }
+  if (foundWeaponStatus === false) {
+    $noWeaponsFound.classList.replace('hidden', 'display');
   }
 }
 
@@ -146,10 +153,12 @@ function switchViews(event) {
   if (event.target.matches('.home')) {
     loopThroughViews('home-page');
     $searchBar.value = null;
+    displayAllWeapons();
   }
   if (event.target.matches('.saved-weapon-list')) {
     loopThroughViews('saved');
     noWeaponsSaved();
+    displayAllWeapons();
   }
 }
 document.addEventListener('click', switchViews);
@@ -214,3 +223,10 @@ function noWeaponsSaved() {
 
 }
 noWeaponsSaved();
+
+function displayAllWeapons() {
+  var $allWeapons = document.querySelectorAll('.green-card');
+  for (var i = 0; i < $allWeapons.length; i++) {
+    $allWeapons[i].classList.replace('hidden', 'display');
+  }
+}
