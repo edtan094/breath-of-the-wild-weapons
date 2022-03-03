@@ -23,39 +23,39 @@
 }
 
 div.weapon-list {
-  margin-top: 100px;
+  margin-top: 6.25rem;
   justify-content: center;
 }
 
 .green-card {
-  margin-bottom: 18px;
+  margin-bottom: 1.125rem;
 }
 
 form {
-  margin-bottom: 14px;
+  margin-bottom: 0.875rem;
 }
 
 .image-in-details {
-  height: 216px;
-  width: 216px;
-  margin-bottom: 22px;
+  height: 13.5rem;
+  width: 13.5rem;
+  margin-bottom: 1.375;
 }
 
 h3 {
-  font-size: 11px;
+  font-size: 0.688rem;
 }
 
 .font-size-17 {
-  font-size: 17px;
+  font-size: 1.063rem;
 }
 
 .font-size-15 {
-  font-size: 15px;
+  font-size: 0.938rem;
 }
 
 .green-card-details {
-  height: 419px;
-  width: 326px;
+  height: 26.188rem;
+  width: 20.375rem;
   background-color: #d9f9d3;
   border-radius: 10px;
 }
@@ -70,32 +70,32 @@ h3 {
   }
 
   .green-card {
-    margin-bottom: 35px;
+    margin-bottom: 2.188rem;
   }
 
   div.weapon-list {
-    margin-top: 100px;
+    margin-top: 6.25rem;
     justify-content: space-between;
   }
 
   form {
-    margin-bottom: 35px;
+    margin-bottom: 2.188rem;
   }
 
   .image-in-details {
-    height: 312px;
-    width: 312px;
+    height: 19.5rem;
+    width: 19.5rem;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 450px) {
   .green-card-details {
-    height: 419px;
-    width: 280px;
+    height: 26.188rem;
+    width: 17.5rem;
     background-color: #d9f9d3;
     border-radius: 10px;
   }
@@ -107,16 +107,16 @@ h3 {
   }
 
   .font-size-17 {
-    font-size: 13px;
+    font-size: 0.813rem;
   }
 
   .font-size-15 {
-    font-size: 11px;
+    font-size: 0.688rem;
   }
 
   .green-card-details {
-    height: 419px;
-    width: 250px;
+    height: 26.188rem;
+    width: 17.5rem;
     background-color: #d9f9d3;
     border-radius: 10px;
   }

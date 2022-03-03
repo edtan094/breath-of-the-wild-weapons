@@ -2,47 +2,28 @@
   display: none !important;
 }
 
-p {
-  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
-}
-
-h3 {
-  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
-}
-
+/* Body, Buttons, Anchors, list elements */
 button {
   font-family: Rye, cursive, Arial, Helvetica, sans-serif;
   cursor: pointer;
   transition: background-color 1s;
 }
 
-.brown-background {
-  background-color: #3c2b00;
-}
-
-.white-text {
-  color: white;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.link-background {
-  width: 100%;
-  transform: scale(1.5);
-}
-
-.position-fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
 body {
   background-image: url("../images/link-overlay.jpg");
   background-size: cover;
   background-attachment: fixed;
+  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
+}
+
+ul {
+  padding-left: 0.625rem;
+}
+
+li {
+  padding-left: 0;
+  margin-left: 0;
+  font-size: 0.688rem;
 }
 
 .no-list-styles {
@@ -52,76 +33,11 @@ body {
 }
 
 .green-card {
-  height: 126px;
-  width: 326px;
+  height: 7.875rem;
+  width: 20.375rem;
   background-color: #d9f9d3;
   border: none;
   text-align: start;
-}
-
-.justify-space-between {
-  justify-content: space-between;
-}
-
-.justify-end {
-  justify-content: end;
-}
-
-.width-100 {
-  width: 100%;
-}
-
-.image {
-  height: 113px;
-  width: 113px;
-  margin-top: 6px;
-  border-radius: 10px;
-}
-
-ul {
-  padding-left: 10px;
-}
-
-li {
-  padding-left: 0;
-  margin-left: 0;
-  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
-  font-size: 11px;
-}
-
-.margin-top-five {
-  margin-top: 5px;
-}
-
-.font-size-22 {
-  font-size: 22px;
-}
-
-.margin-bottom-5 {
-  margin-bottom: 5px;
-}
-
-.column-full,
-.column-half {
-  padding: 0 0.75rem;
-}
-
-form {
-  width: 100%;
-}
-
-input {
-  width: 100%;
-}
-
-.search-icon {
-  color: white;
-  font-size: 15px;
-}
-
-.border-radius-and-shadow {
-  box-shadow: 5px 10px rgba(63, 61, 61, 0.253);
-  border-radius: 10px;
 }
 
 .save-button {
@@ -130,7 +46,7 @@ input {
   border-radius: 4px;
   margin-right: 10px;
   border-width: 2px;
-  height: 22px;
+  height: 1.375rem;
 }
 
 .delete-button {
@@ -140,30 +56,6 @@ input {
   border-width: 2px;
   height: 22px;
   color: red;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.margin-left-10 {
-  margin-left: 10px;
-}
-
-.margin-bottom-0 {
-  margin-bottom: 0;
-}
-
-.margin-top-0 {
-  margin-top: 0;
-}
-
-.max-height-48 {
-  max-height: 48px;
-}
-
-.margin-right-10 {
-  margin-right: 10px;
 }
 
 a {
@@ -179,15 +71,122 @@ button:hover {
   background-color: rgb(128, 166, 231);
 }
 
+/* Page background */
+.link-background {
+  width: 100%;
+  transform: scale(1.5);
+}
+
+/* Header */
+.brown-background {
+  background-color: #3c2b00;
+}
+
+.position-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Form elements */
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+/* Everything else */
+.white-text {
+  color: white;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.image {
+  height: 7.063rem;
+  width: 7.063rem;
+  margin-top: 0.375rem;
+  border-radius: 0.625rem;
+}
+
+.margin-top-five {
+  margin-top: 0.313rem;
+}
+
+.font-size-22 {
+  font-size: 1.375rem;
+}
+
+.margin-bottom-5 {
+  margin-bottom: 0.313rem;
+}
+
+.column-full,
+.column-half {
+  padding: 0 0.75rem;
+}
+
+.search-icon {
+  color: white;
+  font-size: 15px;
+}
+
+.border-radius-and-shadow {
+  box-shadow: 5px 10px rgba(63, 61, 61, 0.253);
+  border-radius: 10px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.margin-left-10 {
+  margin-left: 0.625rem;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.max-height-48 {
+  max-height: 3rem;
+}
+
+.margin-right-10 {
+  margin-right: 0.625rem;
+}
+
 .no-weapons-saved {
   text-align: center;
 }
 
+/* Loading Spinner Animation */
 .lds-roller {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
 }
 
 .lds-roller div {
