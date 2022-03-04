@@ -8,7 +8,7 @@ I have built this project to demonstrate my knowledge in HTML, CSS, and JavaScri
 * HTML5
 * CSS3
 * JavaScript
-* APIs
+* [Hyrule Compendium API](https://gadhagod.github.io/Hyrule-Compendium-API/#/) (using XMLHttpRequest)
 
 ## Live Demo
 Try the live demo [here](https://edtan094.github.io/Breath-of-the-Wild-Weapons/)
