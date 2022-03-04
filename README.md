@@ -23,12 +23,12 @@ Try the live demo [here](https://edtan094.github.io/Breath-of-the-Wild-Weapons/)
 
 ### Getting Started
 1. Clone the repository.
-  ```
+  ```shell
     git clone git@github.com:edtan094/Breath-of-the-Wild-Weapons.git
     cd Breath-of-the-Wild-Weapons
     ```
 2. Install all dependencies with NPM. 
-  ```
+  ```shell
   npm install
   ```
 3. Start the project. Once started you can view the application by opening your index.html file.  
