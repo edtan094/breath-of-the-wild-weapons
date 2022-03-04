@@ -189,6 +189,10 @@ input {
   text-align: center;
 }
 
+.margin-top-50 {
+  margin-top: 3.125rem;
+}
+
 /* Loading Spinner Animation */
 .lds-roller {
   display: inline-block;
