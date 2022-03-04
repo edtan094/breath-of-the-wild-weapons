@@ -5,10 +5,10 @@ A webapp for users that play Legend of Zelda: Breath of the Wild and want to lea
 I have built this project to demonstrate my knowledge in HTML, CSS, and JavaScript while incorporating data from an API using AJAX technology.  I also really liked the game Legend of Zelda: Breath of the Wild and I thought it would be fun project to demonstrate my skills into something I enjoyed playing.  This webapp would have also been really useful for me while I was playing the game so I thought it would be nice to create something that others could use as well.  
 
 ## Technologies used
--HTML5
--CSS3
--JavaScript
--APIs
+..*HTML5
+..*CSS3
+..*JavaScript
+..*APIs
 
 ## Live Demo
 Try the live demo [here](https://edtan094.github.io/Breath-of-the-Wild-Weapons/)
