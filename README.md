@@ -26,7 +26,7 @@ Try the live demo [here](https://edtan094.github.io/Breath-of-the-Wild-Weapons/)
   ```shell
     git clone git@github.com:edtan094/Breath-of-the-Wild-Weapons.git
     cd Breath-of-the-Wild-Weapons
-    ```
+  ```
 2. Install all dependencies with NPM. 
   ```shell
   npm install
