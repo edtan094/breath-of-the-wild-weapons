@@ -1,6 +1,6 @@
 # Breath of the Wild Weapons
 
-A webapp for users to play Legend of Zelda: Breath of the Wild and want to learn the location of all the weapons in the game
+A webapp for users that play Legend of Zelda: Breath of the Wild and want to learn the location of all the weapons in the game
 
 ## Technologies used
 -HTML5
