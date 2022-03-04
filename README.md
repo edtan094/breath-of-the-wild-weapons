@@ -2,7 +2,7 @@
 
 A web application for users that play Legend of Zelda: Breath of the Wild and want to learn the location of all the weapons in the game
 
-I have built this project to demonstrate my knowledge in HTML, CSS, and JavaScript while incorporating data from an API using AJAX technology.  I also really liked the game Legend of Zelda: Breath of the Wild and I thought it would be fun project to demonstrate my skills into something I enjoyed playing.  This web application would have also been really useful for me while I was playing the game so I thought it would be nice to create something that others could use as well.  
+I have built this project to demonstrate my knowledge in HTML, CSS, and JavaScript while incorporating data from an API using AJAX technology.  I also really enjoyed playing the game Legend of Zelda: Breath of the Wild and I thought it would be fun project to demonstrate my skills into something I enjoyed playing.  This web application would have also been really useful for me while I was playing the game so I thought it would be nice to create something that others could use as well.  
 
 ## Technologies used
 * HTML5
