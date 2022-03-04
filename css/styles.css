@@ -2,7 +2,7 @@
   display: none !important;
 }
 
-/* Body, Buttons, Anchors, list elements */
+/* Body, Inputs, Anchors, list elements */
 button {
   font-family: Rye, cursive, Arial, Helvetica, sans-serif;
   cursor: pointer;
@@ -69,6 +69,14 @@ a:hover {
 
 button:hover {
   background-color: rgb(128, 166, 231);
+}
+
+.search {
+  box-shadow: 5px 10px rgb(63 61 61 / 25%);
+  border-radius: 10px;
+  border: none;
+  height: 2.375rem;
+  font-family: Rye, cursive, Arial, Helvetica, sans-serif;
 }
 
 /* Page background */
