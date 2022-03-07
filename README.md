@@ -11,7 +11,7 @@ I have built this project to demonstrate my knowledge in HTML, CSS, and JavaScri
 * [Hyrule Compendium API](https://gadhagod.github.io/Hyrule-Compendium-API/#/) (using XMLHttpRequest)
 
 ## Live Demo
-Try the live demo [here](https://edtan094.github.io/Breath-of-the-Wild-Weapons/)
+Try the live demo [here](https://edtan094.github.io/breath-of-the-wild-weapons/)
 
 ## Features
 * User can view available weapons
@@ -26,8 +26,8 @@ Try the live demo [here](https://edtan094.github.io/Breath-of-the-Wild-Weapons/)
 ### Getting Started
 1. Clone the repository.
   ```shell
-    git clone git@github.com:edtan094/Breath-of-the-Wild-Weapons.git
-    cd Breath-of-the-Wild-Weapons
+    git clone git@github.com:edtan094/breath-of-the-wild-weapons.git
+    cd breath-of-the-wild-weapons
   ```
 2. Install all dependencies with NPM. 
   ```shell
